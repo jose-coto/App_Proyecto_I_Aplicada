@@ -6,4 +6,10 @@
     <string name="hintPasswordLogin">Password</string>
     <string name="btnLogin">Iniciar Sesión</string>
     <string name="textViewMessageRegister">Registrarse</string>
+
+    <string name="hintNameRegister">Nombre</string>
+    <string name="hintLastNameRegister">Apellidos</string>
+    <string name="hintEmailRegister">Email</string>
+    <string name="hintPasswordRegister">Password</string>
+    <string name="btnRegister">Registrarse</string>
 </resources>

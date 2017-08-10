@@ -4,59 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cr.ac.ucr.app_proyecto_i_aplicada.LoginActivity">
+    tools:context="cr.ac.ucr.app_proyecto_i_aplicada.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="495dp"
         android:padding="25dp"
         android:background="#0867AB"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <ImageView
-            android:id="@+id/iVLogo"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
-
-        <TextView
-            android:id="@+id/tvLogin"
-            style="@style/textView_Style"
-            android:text="@string/textViewMessageLogin" />
+        <EditText
+            android:id="@+id/etNameRegister"
+            style="@style/editText_Style"
+            android:inputType="textPersonName"
+            android:hint="@string/hintNameRegister"/>
 
         <EditText
-            android:id="@+id/etEmailLogin"
+            android:id="@+id/etLastNameRegister"
             style="@style/editText_Style"
-            android:hint="@string/hintEmailLogin"
-            android:inputType="textEmailAddress" />
+            android:inputType="textPersonName"
+            android:hint="@string/hintLastNameRegister" />
+
+        <EditText
+            android:id="@+id/etEmailRegister"
+            style="@style/editText_Style"
+            android:inputType="textEmailAddress"
+            android:hint="@string/hintEmailRegister"/>
 
         <in.anshul.libray.PasswordEditText
-            android:id="@+id/etPasswordLogin"
+            android:id="@+id/etPasswordRegister"
             style="@style/editText_Style"
-            android:hint="@string/hintPasswordLogin"
             android:inputType="textPassword"
+            android:hint="@string/hintPasswordRegister"
             app:password_visible="false"
             app:show_drawable="@drawable/show_password_icon"
             app:hide_drawable="@drawable/hide_password_icon"/>
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/button"
             style="@style/button_Style"
-            android:text="@string/btnLogin" />
-
-        <TextView
-            android:id="@+id/tvRegister"
-            style="@style/textView_Style"
-            android:text="@string/textViewMessageRegister" />
+            android:text="@string/btnRegister" />
 
     </LinearLayout>
 </RelativeLayout>
