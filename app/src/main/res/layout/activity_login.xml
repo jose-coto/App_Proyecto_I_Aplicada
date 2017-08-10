@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cr.ac.ucr.app_proyecto_i_aplicada.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="495dp"
+        android:padding="25dp"
+        android:background="#4169E1"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ImageView
+            android:id="@+id/iVLogo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/tVLogin"
+            style="@style/textViewLogin_Style"
+            android:text="@string/textViewMessageLogin" />
+
+        <EditText
+            android:id="@+id/etUserName"
+            style="@style/editTextLogin_Style"
+            android:hint="@string/hintEmailLogin"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            style="@style/editTextLogin_Style"
+            android:hint="@string/hintPasswordLogin"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            style="@style/buttonLogin_Style"
+            android:text="@string/btnLogin" />
+
+        <TextView
+            android:id="@+id/tVRegister"
+            style="@style/textViewLogin_Style"
+            android:text="@string/textViewMessageRegister" />
+
+    </LinearLayout>
+</RelativeLayout>

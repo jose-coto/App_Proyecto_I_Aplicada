@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">App_Proyecto_I</string>
+
+    <string name="textViewMessageLogin">Log in</string>
+    <string name="hintEmailLogin">Email</string>
+    <string name="hintPasswordLogin">Password</string>
+    <string name="btnLogin">Iniciar Sesión</string>
+    <string name="textViewMessageRegister">Registrarse</string>
+</resources>
