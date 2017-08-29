@@ -12,7 +12,7 @@
         android:layout_weight="3.49"
          />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -21,19 +21,37 @@
             android:id="@+id/tvProductName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
             android:text=""
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"/>
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvProductPrice"
-            android:layout_width="match_parent"
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="9dp"
-            android:textSize="15dp"
-            android:text="Precio: "/>
-    </LinearLayout>
+            android:layout_alignStart="@+id/tvProductName"
+            android:layout_below="@+id/tvProductName"
+            android:layout_marginTop="16dp"
+            android:text="Precio:" />
+
+        <TextView
+            android:id="@+id/tvCrcPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tvPrice"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/tvPrice" />
+
+        <TextView
+            android:id="@+id/tvDollarPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="$"
+            android:layout_below="@+id/tvCrcPrice"
+            android:layout_alignStart="@+id/tvCrcPrice" />
+
+    </RelativeLayout>
 </LinearLayout>

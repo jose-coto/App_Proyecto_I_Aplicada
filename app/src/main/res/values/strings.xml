@@ -1,15 +1,28 @@
 <resources>
-    <string name="app_name">App_Proyecto_I</string>
+    <string name="app_name">CoreVises</string>
 
+    <!-- Login Strings-->
+    <string name="titleLogin">Inicio de sesión</string>
     <string name="textViewMessageLogin">Log in</string>
     <string name="hintEmailLogin">Email</string>
     <string name="hintPasswordLogin">Password</string>
     <string name="btnLogin">Iniciar Sesión</string>
     <string name="textViewMessageRegister">Registrarse</string>
 
+    <!-- Register Strings-->
+    <string name="titleRegister">Registrarse</string>
     <string name="hintNameRegister">Nombre</string>
     <string name="hintLastNameRegister">Apellidos</string>
     <string name="hintEmailRegister">Email</string>
     <string name="hintPasswordRegister">Password</string>
     <string name="btnRegister">Registrarse</string>
+
+    <!-- ProductDetails Strings-->
+    <string name="titleListProduct">Productos</string>
+
+    <!-- ProductDetails Strings-->
+    <string name="titleProductDetail">Detalles</string>
+    <string name="textViewPriceProductDetail">Precio</string>
+    <string name="btnBuyProductDetail">Comprar</string>
+    <string name="textViewDescriptionProductDetail">Descripción</string>
 </resources>

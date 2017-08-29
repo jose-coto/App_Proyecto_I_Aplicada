@@ -12,20 +12,19 @@
         android:padding="25dp"
         android:background="#0867AB"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_alignParentTop="true">
 
         <ImageView
             android:id="@+id/iVLogo"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.38"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <TextView
@@ -46,7 +45,8 @@
             android:inputType="textPassword"
             app:password_visible="false"
             app:show_drawable="@drawable/show_password_icon"
-            app:hide_drawable="@drawable/hide_password_icon"/>
+            app:hide_drawable="@drawable/hide_password_icon"
+            android:paddingRight="10dp"/>
 
         <Button
             android:id="@+id/btnLogin"

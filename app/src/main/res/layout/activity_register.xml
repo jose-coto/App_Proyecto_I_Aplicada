@@ -46,7 +46,8 @@
             android:hint="@string/hintPasswordRegister"
             app:password_visible="false"
             app:show_drawable="@drawable/show_password_icon"
-            app:hide_drawable="@drawable/hide_password_icon"/>
+            app:hide_drawable="@drawable/hide_password_icon"
+            android:paddingRight="10dp"/>
 
         <Button
             android:id="@+id/button"
