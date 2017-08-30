@@ -49,7 +49,7 @@ public class ProductListActivity extends AppCompatActivity {
         Product prod2 = new Product(1, "Ho", "Hola minfo", 123,500, getResources().getDrawable(R.drawable.youtube_logo));
         productsList.add(prod2);
 
-        adapter = new ProductAdapter(this,productsList);
+        //uuadapter = new ProductAdapter(this,productsList);
 
         lvProducts.setAdapter(adapter);
 
@@ -59,7 +59,7 @@ public class ProductListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
                 int y= position;
                 //Se crea un nuevo activity que desplegara la info del producto seleccionado
-                Intent intent = new Intent(ProductListActivity.this, ProductDetailsActivity.class);
+                /*Intent intent = new Intent(ProductListActivity.this, ProductDetailsActivity.class);
                 Product map = (Product) parent.getItemAtPosition(position);
 
                 intent.putExtra("id", map.getIdProduct());
@@ -70,6 +70,7 @@ public class ProductListActivity extends AppCompatActivity {
                 //intent.putExtra("link", (Serializable) map.getImageProduct());
 
                 startActivity(intent);
+                */
             }
         });
     }

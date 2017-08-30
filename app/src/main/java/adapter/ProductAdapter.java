@@ -2,6 +2,7 @@ package adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,23 +24,23 @@ import domain.Product;
 
 public class ProductAdapter extends BaseAdapter implements Filterable{
 
-    protected Activity activity;
+    protected Fragment fragment;
 
     protected ArrayList<Product> productsItems;
     protected ArrayList<Product> productsItemsFiltered;
 
-    public ProductAdapter(Activity activity, ArrayList<Product> productsItems) {
-        this.activity = activity;
+    public ProductAdapter(Fragment fragment, ArrayList<Product> productsItems) {
+        this.fragment=fragment;
         this.productsItems = productsItems;
         this.productsItemsFiltered=productsItems;
     }
 
-    public Activity getActivity() {
-        return activity;
+    public Fragment getActivity() {
+        return fragment;
     }
 
-    public void setActivity(Activity activity) {
-        this.activity = activity;
+    public void setActivity(Fragment activity) {
+        this.fragment = activity;
     }
 
     public ArrayList<Product> getProductsItems() {
@@ -70,7 +71,7 @@ public class ProductAdapter extends BaseAdapter implements Filterable{
         View view = convertView;
 
         if(convertView== null){
-            LayoutInflater inflater= (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater= (LayoutInflater)fragment.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.item_product_list, null);
         }
 

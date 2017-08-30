@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_products"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Productos" />
+        <item
+            android:id="@+id/nav_categories"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Categorias" />
+    </group>
+
+    <item android:title="Cuenta">
+        <menu>
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Cerrar Sesión" />
+        </menu>
+    </item>
+
+</menu>

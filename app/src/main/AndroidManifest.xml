@@ -13,14 +13,16 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity">
-        </activity>
-        <activity android:name=".ProductListActivity">
-        </activity>
-        <activity android:name=".ProductDetailsActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".ProductListActivity"></activity>
+        <activity
+            android:name=".CoreVisesActivity"
+            android:label="@string/title_activity_core_vises"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         this.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                launchActivities(view,"ProductListActivity");
+                launchActivities(view,"CoreVisesActivity");
             }
         });
     }
@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         Intent i= null;
         if(activityName.equalsIgnoreCase("registerActivity")) {
             i = new Intent(this, RegisterActivity.class);
-        }else if(activityName.equalsIgnoreCase("ProductListActivity")) {
-            i = new Intent(this, ProductListActivity.class);
+        }else if(activityName.equalsIgnoreCase("CoreVisesActivity")) {
+            i = new Intent(this, CoreVisesActivity.class);
         }else if(activityName.equalsIgnoreCase((""))){
             i = new Intent(this, MainActivity.class);
         }
