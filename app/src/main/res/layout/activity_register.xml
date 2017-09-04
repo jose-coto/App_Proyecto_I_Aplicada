@@ -6,32 +6,37 @@
     android:layout_height="match_parent"
     tools:context="cr.ac.ucr.app_proyecto_i_aplicada.RegisterActivity">
 
+    <include layout="@layout/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/registerToolbar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"></include>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="495dp"
+        android:layout_height="wrap_content"
         android:padding="25dp"
-        android:background="#0867AB"
+        android:background="@color/colorPrimaryDark"
         android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/registerToolbar">
+
+
+        <EditText
+            android:id="@+id/etIdenticationRegister"
+            style="@style/editText_Style"
+            android:hint="@string/hintIdnetificationeRegister"
+            android:inputType= "phone" />
 
         <EditText
             android:id="@+id/etNameRegister"
             style="@style/editText_Style"
             android:inputType="textPersonName"
             android:hint="@string/hintNameRegister"/>
-
-        <EditText
-            android:id="@+id/etLastNameRegister"
-            style="@style/editText_Style"
-            android:inputType="textPersonName"
-            android:hint="@string/hintLastNameRegister" />
 
         <EditText
             android:id="@+id/etEmailRegister"
@@ -49,9 +54,23 @@
             app:hide_drawable="@drawable/hide_password_icon"
             android:paddingRight="10dp"/>
 
+        <EditText
+            android:id="@+id/etAddressRegister"
+            style="@style/editText_Style"
+            android:inputType="textPersonName"
+            android:hint="@string/hintAddressRegister"/>
+
+
+        <EditText
+            android:id="@+id/etPhoneRegister"
+            style="@style/editText_Style"
+            android:inputType="phone"
+            android:hint="@string/hintPhoneNumberRegister"/>
+
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnRegister"
             style="@style/button_Style"
+            android:background="@color/colorAccent"
             android:text="@string/btnRegister" />
 
     </LinearLayout>

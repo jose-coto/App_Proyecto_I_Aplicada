@@ -38,16 +38,7 @@ public class ProductListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Productos");
 
-        ArrayList<Product> productsList = new ArrayList<Product>();
 
-        Product prod = new Product(1, "Hola", "Hola minfo", 123,500, getResources().getDrawable(R.drawable.youtube_logo));
-        productsList.add(prod);
-
-        Product prod1 = new Product(1, "Luis", "Hola minfo", 123,500, getResources().getDrawable(R.drawable.youtube_logo));
-        productsList.add(prod1);
-
-        Product prod2 = new Product(1, "Ho", "Hola minfo", 123,500, getResources().getDrawable(R.drawable.youtube_logo));
-        productsList.add(prod2);
 
         //uuadapter = new ProductAdapter(this,productsList);
 

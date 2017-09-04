@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,24 +17,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 public class CoreVisesActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, ProductListFragment.OnFragmentInteractionListener,
-ProductDetailFragment.OnFragmentInteractionListener{
+ProductDetailFragment.OnFragmentInteractionListener,CategoryListFragment.OnFragmentInteractionListener,
+        LogoutFragment.OnFragmentInteractionListener{
 
     private SearchView svProducts;
+    private TextView prueba;
     private ImageView ivCoreVisesLogo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_core_vises);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarApp);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("CoreVises");
+      //  getSupportActionBar().setTitle("CoreVises");
 
-        svProducts = (SearchView) findViewById(R.id.svProducts);
+        svProducts = (SearchView) findViewById(R.id.searchViewProduct);
         ivCoreVisesLogo=(ImageView) findViewById(R.id.ivCoreVisesLogo);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -63,17 +66,7 @@ ProductDetailFragment.OnFragmentInteractionListener{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        //if (id == R.id.action_settings) {
-          //  return true;
-        //}
-
-        return super.onOptionsItemSelected(item);
+       return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -87,11 +80,19 @@ ProductDetailFragment.OnFragmentInteractionListener{
 
         if (id == R.id.nav_products) {
             fragment= new ProductListFragment();
+            Bundle intent = new Bundle();
+
+            //Se añade el name vacion para relacionarlo que no se llamo desde el fragment de categorias
+            intent.putString("name", "");
+            //al fragment se le añaden los parametros del item que se toco
+            fragment.setArguments(intent);
+
             transactionFragmentation=true;
             svProducts.setVisibility(View.VISIBLE);
             ivCoreVisesLogo.setVisibility(View.GONE);
         } else if (id == R.id.nav_categories) {
-
+            fragment= new CategoryListFragment();
+            transactionFragmentation=true;
         }else if (id == R.id.nav_login) {
 
         }

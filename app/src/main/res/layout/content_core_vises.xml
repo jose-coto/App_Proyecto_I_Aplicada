@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:id="@+id/content_core_vises"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="cr.ac.ucr.app_proyecto_i_aplicada.CoreVisesActivity"

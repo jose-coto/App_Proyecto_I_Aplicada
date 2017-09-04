@@ -4,22 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context="cr.ac.ucr.app_proyecto_i_aplicada.ProductListFragment">
+    tools:context="cr.ac.ucr.app_proyecto_i_aplicada.CategoryListFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="cr.ac.ucr.app_proyecto_i_aplicada.ProductListActivity">
+        tools:context="cr.ac.ucr.app_proyecto_i_aplicada.CategoryListActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimaryDark"
-            android:layout_below="@+id/toolbar"
+            android:layout_below="@+id/toolbarCategoryList"
             android:orientation="vertical">
 
             <ListView
-                android:id="@+id/lvProductList"
+                android:id="@+id/lvCategoryList"
                 style="@style/Widget.AppCompat.ListView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -31,6 +31,5 @@
 
 
     </RelativeLayout>
-
 
 </FrameLayout>

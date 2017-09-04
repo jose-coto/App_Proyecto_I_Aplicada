@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="495dp"
         android:padding="25dp"
-        android:background="#0867AB"
+        android:background="@color/colorPrimaryDark"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
@@ -25,11 +25,12 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.38"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/core_vises_logo" />
 
         <TextView
             android:id="@+id/tvLogin"
             style="@style/textView_Style"
+            android:textColor="@color/colorPrimary"
             android:text="@string/textViewMessageLogin" />
 
         <EditText
@@ -51,11 +52,13 @@
         <Button
             android:id="@+id/btnLogin"
             style="@style/button_Style"
+            android:background="@color/colorAccent"
             android:text="@string/btnLogin" />
 
         <TextView
             android:id="@+id/tvRegister"
             style="@style/textView_Style"
+            android:textColor="@color/colorPrimary"
             android:text="@string/textViewMessageRegister" />
 
     </LinearLayout>

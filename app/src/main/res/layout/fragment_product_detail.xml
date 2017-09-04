@@ -1,37 +1,16 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="cr.ac.ucr.app_proyecto_i_aplicada.ProductDetailFragment">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
         tools:context="cr.ac.ucr.app_proyecto_i_aplicada.ProductDetailsActivity">
 
-
-        <ImageView
-            android:id="@+id/iVProductDetail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/images"
-            android:layout_marginTop="53dp"
-            android:layout_below="@+id/toolbar"
-            android:layout_alignParentStart="true" />
-
-        <Button
-            android:id="@+id/btnBuyProductDetail"
-            android:layout_width="@android:dimen/thumbnail_width"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/tvPrice"
-            android:layout_marginBottom="181dp"
-            android:layout_marginEnd="11dp"
-            android:backgroundTint="@android:color/holo_orange_dark"
-            android:text="@string/btnBuyProductDetail" />
 
         <TextView
             android:id="@+id/tvProductNameDetail"
@@ -42,7 +21,16 @@
             android:layout_marginStart="22dp"
             android:layout_marginTop="21dp"
             android:textSize="25dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iVProductDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="53dp"
+            app:srcCompat="@drawable/images" />
 
         <TextView
             android:id="@+id/tvPrice"
@@ -53,7 +41,19 @@
             android:layout_marginTop="16dp"
             android:text="Precio:"
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBuyProductDetail"
+            android:layout_width="@android:dimen/thumbnail_width"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/tvPrice"
+            android:layout_marginBottom="181dp"
+            android:layout_marginEnd="11dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/btnBuyProductDetail" />
 
         <TextView
             android:id="@+id/tvValuePriceProductDetail"
@@ -61,21 +61,35 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/tvPrice"
             android:layout_below="@+id/tvPrice"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="10dp"
-            android:paddingBottom="5dp"
-            android:textSize="15dp"
-            android:textStyle="normal"/>
+            android:layout_marginTop="24dp"
+            android:text="" />
 
         <TextView
             android:id="@+id/tvValueDollarPriceProductDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/btnBuyProductDetail"
-            android:layout_alignEnd="@+id/tvValuePriceProductDetail"
-            android:textSize="15dp"
-            android:textStyle="normal"
-            android:layout_toEndOf="@+id/tvValuePriceProductDetail" />
+            android:layout_alignStart="@+id/tvValuePriceProductDetail"
+            android:layout_below="@+id/tvValuePriceProductDetail"
+            android:layout_marginTop="47dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/tvDescripcionProductDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvValueDollarPriceProductDetail"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@+id/tvValueDollarPriceProductDetail"
+            android:text="@string/textViewDescriptionProductDetail" />
+
+        <TextView
+            android:id="@+id/tvValueDescriptionProductDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDescripcionProductDetail"
+            android:layout_marginTop="22dp"
+            android:layout_toEndOf="@+id/tvValueDollarPriceProductDetail" />
+
 
     </RelativeLayout>
 

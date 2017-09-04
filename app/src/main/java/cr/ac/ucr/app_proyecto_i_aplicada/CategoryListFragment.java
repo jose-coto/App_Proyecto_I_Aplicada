@@ -1,19 +1,13 @@
 package cr.ac.ucr.app_proyecto_i_aplicada;
 
-import android.app.SearchManager;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -21,36 +15,35 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+import adapter.CategoryAdapter;
 import adapter.ProductAdapter;
 import connection.BCCRConection;
-import data.ProductData;
+import data.CategoryData;
+import domain.Category;
 import domain.Product;
-
-import static android.content.Context.SEARCH_SERVICE;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ProductListFragment.OnFragmentInteractionListener} interface
+ * {@link CategoryListFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ProductListFragment#newInstance} factory method to
+ * Use the {@link CategoryListFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProductListFragment extends Fragment {
+public class CategoryListFragment extends Fragment {
+
+    private ListView lvCategory;
+    private CategoryAdapter adapter;
 
     private ListView lvProducts;
-    private Toolbar toolbar;
-    public ProductAdapter adapter;
-    private SearchView svProducts;
-    private ImageView ivCoreVisesLogo;
-    private TextView prueba;
-
+    private ProductAdapter adapter1;
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -60,7 +53,7 @@ public class ProductListFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ProductListFragment() {
+    public CategoryListFragment() {
         // Required empty public constructor
     }
 
@@ -70,11 +63,11 @@ public class ProductListFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ProductListFragment.
+     * @return A new instance of fragment CategoryListFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProductListFragment newInstance(String param1, String param2) {
-        ProductListFragment fragment = new ProductListFragment();
+    public static CategoryListFragment newInstance(String param1, String param2) {
+        CategoryListFragment fragment = new CategoryListFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -82,12 +75,9 @@ public class ProductListFragment extends Fragment {
         return fragment;
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setHasOptionsMenu(true);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -95,57 +85,40 @@ public class ProductListFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_product_list, container, false);
+        View view1= inflater.inflate(R.layout.app_bar_core_vises, container, false);
+        View view= inflater.inflate(R.layout.fragment_category_list, container, false);
+        lvCategory = view.findViewById(R.id.lvCategoryList);
 
-        lvProducts = view.findViewById(R.id.lvProductList);
-        svProducts = view.findViewById(R.id.searchViewProduct);
+        Log.d("Pruebba","En categoryFragment");
+        CategoryData categoryData=new CategoryData(getContext());
 
-        ProductData productData=new ProductData(getContext());
-        ArrayList<Product> productsList = null;
-        String valueCategory="";
-
-
-        valueCategory=getArguments().getString("name");
-
-        Log.d("valor de categoria",valueCategory);
+        ArrayList<Category> categoryList=categoryData.getAllCategories();
 
 
-        //productsList=productData.getAllProducts();
-        if(valueCategory.equals("")){
-            productsList=productData.getAllProducts();
-        }else{
-            productsList=productData.getProductsByCategory(valueCategory);
-        }
+        adapter = new CategoryAdapter(CategoryListFragment.this,categoryList);
 
-        adapter = new ProductAdapter(this,productsList);
-
-        lvProducts.setAdapter(adapter);
+        lvCategory.setAdapter(adapter);
 
         //Se le añade el evento sobre el item
-        lvProducts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
-                Fragment fragment = new ProductDetailFragment();
+                Fragment fragment = new ProductListFragment();
 
-                Product map = (Product) parent.getItemAtPosition(position);
+                Category map = (Category) parent.getItemAtPosition(position);
 
                 Bundle intent = new Bundle();
 
-                intent.putInt("id", map.getIdProduct());
                 intent.putString("name", map.getName());
-                intent.putFloat("price", map.getPrice());
-                intent.putFloat("usdPrice", map.getDollarPrice());
-                intent.putString("description", map.getDescription());
-
                 //al fragment se le añaden los parametros del item que se toco
                 fragment.setArguments(intent);
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.content_core_vises, fragment).addToBackStack(null).commit();
-
             }
         });
         return view;
@@ -175,7 +148,6 @@ public class ProductListFragment extends Fragment {
         mListener = null;
     }
 
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -190,8 +162,4 @@ public class ProductListFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
-
-
-
-
 }

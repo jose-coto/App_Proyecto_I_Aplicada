@@ -18,17 +18,27 @@ public class Product {
     private float price;
     private float dollarPrice;
     private Drawable imageProduct;
+    private String category;
 
     public Product(){
 
     }
-    public Product(int idProduct, String name, String description, float price,float dollarPrice, Drawable imageProduct) {
+    public Product(int idProduct, String name, String description, float price,float dollarPrice, Drawable imageProduct,String category) {
         this.idProduct = idProduct;
         this.name = name;
         this.description = description;
         this.price = price;
         this.dollarPrice=dollarPrice;
         this.imageProduct = imageProduct;
+        this.category=category;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public float getDollarPrice() {

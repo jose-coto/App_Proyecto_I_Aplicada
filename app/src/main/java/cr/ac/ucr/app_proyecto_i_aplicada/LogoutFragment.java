@@ -7,29 +7,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import domain.Product;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ProductDetailFragment.OnFragmentInteractionListener} interface
+ * {@link LogoutFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ProductDetailFragment#newInstance} factory method to
+ * Use the {@link LogoutFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProductDetailFragment extends Fragment {
+public class LogoutFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
-    private TextView tvProductName;
-    private TextView tvProductCRCValue;
-    private TextView tvProductUSDValue;
-    private TextView tvDescriptionValue;
-    private Product object;
-
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -39,7 +29,7 @@ public class ProductDetailFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ProductDetailFragment() {
+    public LogoutFragment() {
         // Required empty public constructor
     }
 
@@ -49,11 +39,11 @@ public class ProductDetailFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ProductDetailFragment.
+     * @return A new instance of fragment LogoutFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProductDetailFragment newInstance(String param1, String param2) {
-        ProductDetailFragment fragment = new ProductDetailFragment();
+    public static LogoutFragment newInstance(String param1, String param2) {
+        LogoutFragment fragment = new LogoutFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -74,26 +64,7 @@ public class ProductDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_product_detail, container, false);
-
-        this.tvProductName=view.findViewById(R.id.tvProductNameDetail);
-        this.tvProductCRCValue=view.findViewById(R.id.tvValuePriceProductDetail);
-        this.tvProductUSDValue=view.findViewById(R.id.tvValueDollarPriceProductDetail);
-        this.tvDescriptionValue= view.findViewById(R.id.tvValueDescriptionProductDetail);
-
-        this.object=new Product();
-        object.setIdProduct(getArguments().getInt("id"));
-        object.setName(getArguments().getString("name"));
-        object.setPrice(getArguments().getFloat("price"));
-        object.setDollarPrice(getArguments().getFloat("usdPrice"));
-        object.setDescription(getArguments().getString("description"));
-
-        tvProductName.setText(object.getName());
-        tvProductCRCValue.setText("¢: "+object.getPrice());
-        tvProductUSDValue.setText("$: "+object.getDollarPrice());
-        tvDescriptionValue.setText(object.getDescription());
-
-        return view;
+        return inflater.inflate(R.layout.fragment_logout, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
