@@ -8,7 +8,7 @@ public class Constants {
 
     //Constants para usuario
     public final static String NAMESPACE = "http://tempuri.org/";
-    public final static String URL = "http://192.168.2.12/CRUD2.asmx";
+    public final static String URL = "http://192.168.43.124/CRUD2.asmx";
     public final static String SOAPACTIONLOGIN = "http://tempuri.org/validateLogin";
     public final static String METHODNAMELOGIN = "validateLogin";
     public final static String SOAPACTIONINSERT = "http://tempuri.org/insertUser";
