@@ -80,7 +80,9 @@
             android:layout_below="@+id/tvValueDollarPriceProductDetail"
             android:layout_marginTop="40dp"
             android:layout_toEndOf="@+id/tvValueDollarPriceProductDetail"
-            android:text="@string/textViewDescriptionProductDetail" />
+            android:text="@string/textViewDescriptionProductDetail"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/tvValueDescriptionProductDetail"

@@ -97,8 +97,8 @@ public class LoginActivity extends AppCompatActivity {
                             if (resultLogin) {
                                 //Lanzamos el siguiente activity
                                 Intent intent=new Intent(LoginActivity.this, CoreVisesActivity.class);
-                                intent.putExtra("email", user.getEmail());
                                 startActivity(intent);
+                                finish();
                             } else {//Se muestra un mensaje de error
                                 Toast.makeText(getApplicationContext(), "Problemas al autentificar\nPor favor intente nuevamente", Toast.LENGTH_LONG).show();
                             }
@@ -201,7 +201,6 @@ public class LoginActivity extends AppCompatActivity {
                 request.addProperty("password", params[1]);
 
                 SoapSerializationEnvelope envelope= new SoapSerializationEnvelope(SoapEnvelope.VER11);
-
                 envelope.dotNet=true;
 
                 envelope.setOutputSoapObject(request);

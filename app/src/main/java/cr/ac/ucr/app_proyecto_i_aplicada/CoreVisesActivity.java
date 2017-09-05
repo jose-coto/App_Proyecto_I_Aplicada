@@ -1,11 +1,13 @@
 package cr.ac.ucr.app_proyecto_i_aplicada;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,15 +27,19 @@ ProductDetailFragment.OnFragmentInteractionListener,CategoryListFragment.OnFragm
         LogoutFragment.OnFragmentInteractionListener{
 
     private SearchView svProducts;
-    private TextView prueba;
+    private TextView tvEmailHeader;
     private ImageView ivCoreVisesLogo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_core_vises);
+
+        LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.nav_header_core_vises, null);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarApp);
         setSupportActionBar(toolbar);
-      //  getSupportActionBar().setTitle("CoreVises");
 
         svProducts = (SearchView) findViewById(R.id.searchViewProduct);
         ivCoreVisesLogo=(ImageView) findViewById(R.id.ivCoreVisesLogo);
@@ -94,7 +100,8 @@ ProductDetailFragment.OnFragmentInteractionListener,CategoryListFragment.OnFragm
             fragment= new CategoryListFragment();
             transactionFragmentation=true;
         }else if (id == R.id.nav_login) {
-
+            fragment= new LogoutFragment();
+            transactionFragmentation=true;
         }
 
         if(transactionFragmentation){

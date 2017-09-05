@@ -2,12 +2,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context="cr.ac.ucr.app_proyecto_i_aplicada.LogoutFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/logOutToolbar"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"></include>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="119dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="@string/messageLogOut" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btnCancelLogOut"
+                android:background="@color/colorAccent"
+                android:layout_marginStart="17dp"
+                android:layout_below="@+id/textView4"
+                android:layout_alignStart="@+id/textView4"
+                android:layout_marginTop="35dp" />
+
+            <Button
+                android:id="@+id/btnLogOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="85dp"
+                android:text="@string/btnLogOut"
+                android:background="@color/colorAccent"
+                android:layout_alignBaseline="@+id/btnCancel"
+                android:layout_alignBottom="@+id/btnCancel"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </FrameLayout>
