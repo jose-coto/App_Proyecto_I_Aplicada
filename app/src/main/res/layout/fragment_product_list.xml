@@ -15,14 +15,38 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorPrimaryDark"
-            android:layout_below="@+id/toolbar"
             android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
 
+                <EditText
+                    android:id="@+id/eTSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text=""
+                    android:hint="@string/hintSearch"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/btnSearch" />
+
+                <Button
+                    android:id="@+id/btnSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/btnSearch"
+                    android:background="@color/colorAccent"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
             <ListView
                 android:id="@+id/lvProductList"
                 style="@style/Widget.AppCompat.ListView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="510dp"
                 android:background="@color/colorPrimaryDark"
                 android:footerDividersEnabled="false"
                 android:headerDividersEnabled="false" />

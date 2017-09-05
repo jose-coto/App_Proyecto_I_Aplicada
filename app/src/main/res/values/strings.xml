@@ -38,6 +38,9 @@
     <string name="btnLogOut">Aceptar</string>
     <string name="btnCancelLogOut">Cancelar</string>
 
+    <!-- Fragment product list-->
+    <string name="hintSearch">Buscador</string>
+    <string name="btnSearch">Buscar</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

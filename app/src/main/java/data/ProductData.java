@@ -1,7 +1,15 @@
 package data;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -141,5 +149,42 @@ public class ProductData {
     }
     private Float getDollarValue(Float price,Float usdValue){
         return price/usdValue;
+    }
+
+    public ArrayList<Product> getProductByName(String valueSearch) {
+        ArrayList<Product> productsListFiltered = new ArrayList<Product>();
+        ArrayList<Product> productsList = getAllProducts();
+
+        for (int i=0;i<productsList.size();i++) {
+            Product product= productsList.get(i);
+            if(product.getName().contains(valueSearch)){
+                productsListFiltered.add(product);
+            }
+        }
+        return productsListFiltered;
+    }
+
+    private Bitmap getImageByUrl(String urlImage){
+
+        URL imageUrl = null;
+        HttpURLConnection conn = null;
+        Bitmap imagen=null;
+        try {
+
+            imageUrl = new URL("http://pagina.com/foto.jpg");
+            conn = (HttpURLConnection) imageUrl.openConnection();
+            conn.connect();
+
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 2; // el factor de escala a minimizar la imagen, siempre es potencia de 2
+
+            imagen = BitmapFactory.decodeStream(conn.getInputStream(), new Rect(0, 0, 0, 0), options);
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+        return imagen;
     }
 }

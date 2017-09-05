@@ -18,11 +18,6 @@
             android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
-            <SearchView
-                android:id="@+id/searchViewProduct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"/>
 
         </android.support.v7.widget.Toolbar>
 

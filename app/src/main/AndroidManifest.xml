@@ -22,7 +22,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".ProductListActivity" />
         <activity
             android:name=".CoreVisesActivity"
             android:label="@string/title_activity_core_vises"

@@ -62,14 +62,17 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //Creamos un usario con los valores que se ingresan en los editText
-                user = new User();
-                user.setIdentificacionNumber(Integer.parseInt(etIdentification.getText().toString()));
-                user.setName(etName.getText().toString());
-                user.setEmail(etEmail.getText().toString());
-                user.setPassword(etPassword.getText().toString());
-                user.setAddress(etAddress.getText().toString());
-                user.setPhoneNumber(etPhone.toString());
+                //user = new User();
+                //user.setIdentificacionNumber(Integer.parseInt(etIdentification.getText().toString()));
+                //user.setName(etName.getText().toString());
+                //user.setEmail(etEmail.getText().toString());
+                //user.setPassword(etPassword.getText().toString());
+                //user.setAddress(etAddress.getText().toString());
+                //user.setPhoneNumber(etPhone.toString());
 
+                Intent intent = new Intent(getApplicationContext(), CoreVisesActivity.class);
+                startActivity(intent);
+                /*
                 //Ventana de dialogo que se muestra mientas se ejecuta el web services
                 progressDialog = new ProgressDialog(RegisterActivity.this);
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -80,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
                 //Llamado del web service
                 register=new Register();
                 register.execute(user);
-
+                */
 
                 /*if(!etIdentification.getText().toString().isEmpty() && !etName.getText().toString().isEmpty() &&
                         !etEmail.getText().toString().isEmpty() && !etAddress.getText().toString().isEmpty() &&

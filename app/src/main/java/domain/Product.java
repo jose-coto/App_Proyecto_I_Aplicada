@@ -1,5 +1,6 @@
 package domain;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -17,19 +18,20 @@ public class Product {
     private String description;
     private float price;
     private float dollarPrice;
+    private String urlImageProduct;
     private Drawable imageProduct;
     private String category;
 
     public Product(){
 
     }
-    public Product(int idProduct, String name, String description, float price,float dollarPrice, Drawable imageProduct,String category) {
+    public Product(int idProduct, String name, String description, float price,float dollarPrice, String urlImageProduct,String category) {
         this.idProduct = idProduct;
         this.name = name;
         this.description = description;
         this.price = price;
         this.dollarPrice=dollarPrice;
-        this.imageProduct = imageProduct;
+        this.urlImageProduct = urlImageProduct;
         this.category=category;
     }
 
@@ -55,6 +57,14 @@ public class Product {
 
     public void setIdProduct(int idProduct) {
         this.idProduct = idProduct;
+    }
+
+    public String getUrlImageProduct() {
+        return urlImageProduct;
+    }
+
+    public void setUrlImageProduct(String urlImageProduct) {
+        this.urlImageProduct = urlImageProduct;
     }
 
     public String getName() {
@@ -85,7 +95,6 @@ public class Product {
         return imageProduct;
     }
 
-    public void setImageProduct(Drawable imageProduct) {
-        this.imageProduct = imageProduct;
+    public void setImageProduct(Drawable imageProduct) {this.imageProduct = imageProduct;
     }
 }

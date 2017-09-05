@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -50,6 +52,8 @@ public class ProductListFragment extends Fragment {
     private SearchView svProducts;
     private ImageView ivCoreVisesLogo;
     private TextView prueba;
+    private EditText etSearch;
+    private Button btnSearch;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -101,28 +105,25 @@ public class ProductListFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_product_list, container, false);
 
         lvProducts = view.findViewById(R.id.lvProductList);
-        svProducts = view.findViewById(R.id.searchViewProduct);
+        etSearch=view.findViewById(R.id.eTSearch);
+        btnSearch=view.findViewById(R.id.btnSearch);
 
-        ProductData productData=new ProductData(getContext());
+        final ProductData productData=new ProductData(getContext());
         ArrayList<Product> productsList = null;
         String valueCategory="";
 
 
         valueCategory=getArguments().getString("name");
 
-        Log.d("valor de categoria",valueCategory);
-
-
-        //productsList=productData.getAllProducts();
         if(valueCategory.equals("")){
             productsList=productData.getAllProducts();
         }else{
             productsList=productData.getProductsByCategory(valueCategory);
         }
 
-        adapter = new ProductAdapter(this,productsList);
 
-        lvProducts.setAdapter(adapter);
+
+        lvProducts.setAdapter(getProductAdapter(this,productsList));
 
         //Se le añade el evento sobre el item
         lvProducts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -148,9 +149,26 @@ public class ProductListFragment extends Fragment {
 
             }
         });
+
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String valueSearch=etSearch.getText().toString();
+                if(valueSearch.equalsIgnoreCase("")){
+                    Toast.makeText(getContext(),"Debes de ingresar un criterio para realizar la busqueda",Toast.LENGTH_SHORT);
+                }else{
+                    ArrayList<Product> productsList=productData.getProductByName(valueSearch);
+
+                    lvProducts.setAdapter(getProductAdapter(getParentFragment(),productsList));
+                }
+            }
+        });
         return view;
     }
 
+    private ProductAdapter getProductAdapter(Fragment fragment, ArrayList<Product> productsList){
+        return adapter = new ProductAdapter(this,productsList);
+    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {

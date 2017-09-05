@@ -41,7 +41,7 @@ ProductDetailFragment.OnFragmentInteractionListener,CategoryListFragment.OnFragm
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarApp);
         setSupportActionBar(toolbar);
 
-        svProducts = (SearchView) findViewById(R.id.searchViewProduct);
+
         ivCoreVisesLogo=(ImageView) findViewById(R.id.ivCoreVisesLogo);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -94,7 +94,6 @@ ProductDetailFragment.OnFragmentInteractionListener,CategoryListFragment.OnFragm
             fragment.setArguments(intent);
 
             transactionFragmentation=true;
-            svProducts.setVisibility(View.VISIBLE);
             ivCoreVisesLogo.setVisibility(View.GONE);
         } else if (id == R.id.nav_categories) {
             fragment= new CategoryListFragment();

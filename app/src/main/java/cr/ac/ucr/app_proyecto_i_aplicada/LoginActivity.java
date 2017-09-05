@@ -202,6 +202,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 SoapSerializationEnvelope envelope= new SoapSerializationEnvelope(SoapEnvelope.VER11);
                 envelope.dotNet=true;
+                envelope.encodingStyle = "utf-8";
 
                 envelope.setOutputSoapObject(request);
 
